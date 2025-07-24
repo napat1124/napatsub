@@ -17,13 +17,12 @@ Below 18.5: Underweight
 30.0 and above: Obese
 
 """
-
 weight = float(input("Weight: "))
 height = float(input("Height: "))
 bmi = weight / height ** 2
 print("Your BMI: ", bmi)
 if bmi < 18.5:
-    print("Underweight")30
+    print("Underweight")
 
 if bmi >= 18.5 and bmi <= 24.9:
     print("Normal Weight")
