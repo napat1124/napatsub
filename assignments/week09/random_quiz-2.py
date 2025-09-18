@@ -58,8 +58,44 @@ def get_divisibility_hint(number):
 
 def get_range_hint(number, current_min=1, current_max=100):
     # Return narrowed range around the number
-    pass
+    return f"HINT: The narrowed range {range(current_min, current_max)}"
 
 def get_thefirst_digit_hint(number):
     # Retun the first digit of the number
-    pass
+    return f"HINT: The first digit of number is {number//10}"
+
+import random
+
+test_random = random.randint(1,20)
+
+print("-- เกมทายตัวเลข มาเดาใจคอมพิวเตอร์กันเถอะ --")
+print("-- ทายตัวเลขจำนวนเต็มตั้งแต่ 1-100 --")
+print("-- คุณมีโอกาส unlimited --")
+
+i = 1
+
+while True:
+
+    print(f"ความพยยามครั้งที่ {i+1}")
+    guess_number = int(input("What is your guess number (1-20)?: "))
+
+    if test_random == guess_number:
+       print("เจ๋งแจ๋ว")
+       break
+    elif guess_number < test_random:
+       print("มั่วจ้า น้อยไปน้า")
+    elif guess_number > test_random:
+       print("มั่วจ้า มากไปหน่อย")
+
+       print(i)
+
+       if i ==3:
+           get_parity_hint(test_random)
+       elif i == 5:
+           get_divisibility_hint(test_random)
+       elif i == 7:
+           get_range_hint(test_random, test_random-12, test_random+12)
+       elif i == 10:
+           get_thefirst_digit_hint(test_random)
+    
+    i = i + i
