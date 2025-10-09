@@ -25,7 +25,7 @@ Lowest: 19 C
     
 def get_temperatures():
     temperature = [32, 34.2, 31, 32, 33.4, 29.1, 31]
-    return temperatures
+    return temperature
 
 def analyza_temps(temp_list):
     sum = 0
@@ -43,5 +43,5 @@ def display_analysis(avg, high, low):
     print("Lower: %.1f C" % (low))
 
 my_temp = get_temperatures()
-analyzed_temp = analyze_temps(my_temp)
+analyzed_temp = analyza_temps(my_temp)
 display_analysis(analyzed_temp[0], analyzed_temp[1],analyzed_temp[2])
